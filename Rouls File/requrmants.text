@@ -1,0 +1,43 @@
+Alpha project requirements
+==========================
+
+Runtime requirements:
+- Python 3.11 or newer
+- A browser such as Edge, Chrome, or Firefox
+- No third-party Python dependency is required for the first version
+- Use `--share-lan` for phone and PC access on the same trusted Wi-Fi network
+- For Turtle graphics, use a desktop Python install with Tkinter/Turtle support
+
+Language goals:
+- Human-readable syntax
+- Computer-readable execution model
+- Interpreted runtime
+- Functions, loops, conditions, error handling, and safe imports
+- Extra readable parameters such as `unless`, `repeat from ... to ... step ...`, and `package ...`
+- Built-in SQLite database support
+- Local package manager
+- Easy extension points for more human languages and more bridge languages
+- Desktop and mobile live studio access
+
+Project files:
+- `Maine File/alpha.py` -> interpreter and runtime
+- `Maine File/maine.py` -> local web server
+- `Maine File/index.html` -> Alpha browser editor
+- `Maine File/style.css` -> Alpha Studio styling
+- `Maine File/studio.js` -> JavaScript editor logic, highlighting, autosave, and mobile tools
+- `Maine File/manifest.webmanifest` -> installable web app manifest
+- `Maine File/sw.js` -> offline cache service worker
+- `Rouls File/rulls.py` -> language rules and keyword aliases
+- `Libary/database.sql` -> database schema
+- `Packages/registry.json` -> local package catalog
+
+How to run:
+1. Open a terminal in the project folder.
+2. Run `python "Maine File/maine.py"`.
+3. Open `http://127.0.0.1:8080` in your browser.
+4. Write Alpha code and press `Run Alpha`.
+
+How to run on mobile and PC:
+1. Run `python "Maine File/maine.py" --share-lan`.
+2. Keep your phone and PC on the same trusted Wi-Fi network.
+3. Open one of the printed URLs on each device.
