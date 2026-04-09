@@ -1,0 +1,14 @@
+package math_plus
+
+write_csv_rows(
+    "reports/students.csv",
+    [
+        {"name": "Ali", "score": 80},
+        {"name": "Sara", "score": 92},
+        {"name": "Ravi", "score": 75}
+    ]
+)
+
+set rows = read_csv_rows("reports/students.csv")
+note rows
+note average_of([80, 92, 75])

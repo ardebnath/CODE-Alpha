@@ -1,0 +1,9 @@
+make_folder("notes")
+
+with open("notes/context_demo.txt", "w") as file do
+    file.write("Alpha context manager demo")
+end
+
+with open("notes/context_demo.txt", "r") as file do
+    note file.read()
+end

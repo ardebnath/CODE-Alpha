@@ -1,0 +1,5 @@
+set profile = {"name": "Bluear_cod", "tools": ["Alpha", "Python"]}
+
+set raw = write_json(profile)
+note raw
+note read_json(raw)

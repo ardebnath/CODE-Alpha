@@ -1,0 +1,6 @@
+bolo "Alpha alias example"
+rakho name = "Bluear_cod"
+
+agar true then
+    bolo name
+end

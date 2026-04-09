@@ -1,0 +1,8 @@
+try
+    assert length([1, 2, 3]) == 3, "List size changed"
+    raise "This is a sample Alpha error"
+catch err
+    note err
+finally
+    note "Error demo finished"
+end

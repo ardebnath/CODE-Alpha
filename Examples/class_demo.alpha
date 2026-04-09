@@ -1,0 +1,23 @@
+class Person
+    function __init__(self, name)
+        set self.name = name
+    end
+
+    function greet(self)
+        give "Hello, " + self.name
+    end
+end
+
+class Student extends Person
+    function __init__(self, name, level)
+        Person.__init__(self, name)
+        set self.level = level
+    end
+
+    function describe(self)
+        give self.greet() + " from level " + str(self.level)
+    end
+end
+
+set learner = Student("Aritra", 3)
+note learner.describe()

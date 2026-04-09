@@ -1,0 +1,12 @@
+unless false then
+    note "Unless logic is working"
+end
+
+repeat number from 1 to 5 step 2
+    note number
+end
+
+set data = [1, 1, 2, 3, 3, 4]
+package collections_plus
+note unique_items(data)
+note chunk_items(data, 2)

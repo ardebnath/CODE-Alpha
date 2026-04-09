@@ -1,0 +1,7 @@
+make_folder("notes")
+
+write_text("notes/alpha.txt", "Alpha line 1")
+append_text("notes/alpha.txt", "\nAlpha line 2")
+
+note exists("notes/alpha.txt")
+note read_text("notes/alpha.txt")

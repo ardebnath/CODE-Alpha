@@ -1,0 +1,19 @@
+assert 2 + 2 == 4, "Math should work"
+
+note current_date()
+note current_time()
+note timestamp_text()
+
+set scores = [50, 20, 80, 20]
+note sort_items(scores)
+note reverse_items(scores)
+
+write_csv_rows(
+    "reports/demo.csv",
+    [
+        {"name": "Ali", "score": 80},
+        {"name": "Sara", "score": 92}
+    ]
+)
+
+note read_csv_rows("reports/demo.csv")

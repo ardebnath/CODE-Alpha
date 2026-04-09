@@ -1,0 +1,9 @@
+note "Hello from Alpha!"
+
+set name = "world"
+
+function greet(person)
+    note "Hello, " + person + "!"
+end
+
+greet(name)

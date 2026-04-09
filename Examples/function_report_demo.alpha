@@ -1,0 +1,13 @@
+function total_scores(values)
+    set total = 0
+
+    repeat value in values
+        set total = total + value
+    end
+
+    give total
+end
+
+set scores = [80, 92, 75]
+note total_scores(scores)
+note length(scores)

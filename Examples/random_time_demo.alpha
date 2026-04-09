@@ -1,0 +1,7 @@
+note current_date()
+note current_time()
+note timestamp_text()
+
+set colors = ["red", "green", "blue"]
+note random_choice(colors)
+note random_number(1, 10)

@@ -1,0 +1,10 @@
+$ This is a one line Alpha comment
+note "Code before block comment"
+
+$$
+This whole block is ignored by Alpha.
+You can write many lines here.
+$$
+
+set name = "Alpha"
+note name $ inline one line comment after code

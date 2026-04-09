@@ -1,0 +1,6 @@
+package text_tools as text_tools_lib
+package math_plus as math_plus_lib
+
+set text = "alpha package alias demo"
+note text_tools_lib.slugify(text)
+note math_plus_lib.percent_of(18, 24)

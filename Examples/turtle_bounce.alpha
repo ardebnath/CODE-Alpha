@@ -1,0 +1,21 @@
+use turtle
+
+set window = turtle.Screen()
+window.bgcolor("white")
+window.title("Alpha Turtle Animation")
+window.tracer(0)
+
+set mover = turtle.Turtle()
+mover.shape("circle")
+mover.color("blue")
+mover.penup()
+
+repeat frame from 1 to 1200
+    mover.forward(1)
+    if mover.xcor() > 200 or mover.xcor() < -200 then
+        mover.right(180)
+    end
+    window.update()
+end
+
+window.mainloop()

@@ -1,0 +1,9 @@
+package text_tools
+package math_plus
+
+set sentence = "alpha works on phone and desktop"
+
+note slugify(sentence)
+note title_case(sentence)
+note word_count(sentence)
+note percent_of(25, 40)

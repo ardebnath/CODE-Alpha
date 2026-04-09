@@ -1,0 +1,7 @@
+note "Saving data with Alpha"
+
+store("language", {"name": "Alpha", "kind": "interpreted"})
+set saved = fetch("language")
+
+note saved
+note bridge("sql", "SELECT key, value_json FROM key_value_store ORDER BY key")
