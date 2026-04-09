@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#07111d">
+    <title>Alpha Learn</title>
+    <link rel="manifest" href="/manifest.webmanifest?v=alpha-learn-v1">
+    <link rel="stylesheet" href="/style.css?v=alpha-learn-v1">
+</head>
+<body>
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+
+    <main class="shell">
+        <header class="hero panel">
+            <div class="hero-copy">
+                <p class="eyebrow">Bluear_cod</p>
+                <h1>Alpha Learn</h1>
+                <p class="lead">
+                    Learn programming with Alpha's human-readable syntax through guided lessons,
+                    mini projects, quizzes, and a real runnable code lab.
+                </p>
+
+                <div class="hero-actions">
+                    <button id="runButton" class="primary" type="button">Run Lesson</button>
+                    <button id="nextLessonButton" type="button">Next Lesson</button>
+                    <button id="hintButton" class="secondary" type="button">Show Hint</button>
+                    <button id="resetProgressButton" type="button">Reset Progress</button>
+                </div>
+            </div>
+
+            <div class="hero-side">
+                <article class="stat-card">
+                    <span>Completed</span>
+                    <strong id="completedCount">0 lessons</strong>
+                </article>
+                <article class="stat-card">
+                    <span>Track</span>
+                    <strong id="activeTrackName">Loading...</strong>
+                </article>
+                <article class="stat-card">
+                    <span>Status</span>
+                    <strong id="statusText">Ready to learn</strong>
+                </article>
+            </div>
+        </header>
+
+        <section class="banner panel">
+            <div>
+                <p class="eyebrow">Current Lesson</p>
+                <h2 id="lessonTitle">Loading Alpha Learn...</h2>
+                <p id="lessonGoal" class="copy">Please wait while the lesson path loads.</p>
+            </div>
+
+            <div class="banner-notes">
+                <div class="badge-card">
+                    <span>Hint</span>
+                    <p id="lessonHint">Lesson hints will appear here.</p>
+                </div>
+                <div class="badge-card">
+                    <span>Challenge</span>
+                    <p id="lessonChallenge">Challenge ideas will appear here.</p>
+                </div>
+                <div class="badge-card">
+                    <span>Checkpoint</span>
+                    <p id="lessonCheckpoint">Checkpoint notes will appear here.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="studio-grid">
+            <section class="panel track-panel">
+                <div class="panel-head">
+                    <div>
+                        <p class="eyebrow">Path</p>
+                        <h2>Course Tracks</h2>
+                    </div>
+                    <p id="progressBadge" class="pill-badge">0 / 0 complete</p>
+                </div>
+                <div id="trackList" class="track-list"></div>
+            </section>
+
+            <section class="panel lesson-panel">
+                <div class="panel-head">
+                    <div>
+                        <p class="eyebrow">Focus</p>
+                        <h2>Lesson Guide</h2>
+                    </div>
+                    <span id="lessonLevel" class="pill-badge soft">Starter</span>
+                </div>
+                <div class="lesson-meta">
+                    <span id="lessonDuration">5 min</span>
+                    <span id="lessonKeywords">note</span>
+                </div>
+                <p id="lessonExplain" class="copy">
+                    Alpha Learn explains each lesson in clear steps.
+                </p>
+                <div id="coachBox" class="coach-box">Choose a lesson card to begin.</div>
+                <div class="quick-actions">
+                    <button id="loadQuickWinButton" type="button">Load Quick Win</button>
+                    <button id="markDoneButton" class="secondary" type="button">Mark Complete</button>
+                </div>
+                <div id="quickWinList" class="quick-win-list"></div>
+            </section>
+
+            <section class="panel editor-panel">
+                <div class="panel-head">
+                    <div>
+                        <p class="eyebrow">Lab</p>
+                        <h2>Alpha Code Lab</h2>
+                    </div>
+                    <div class="editor-actions">
+                        <button id="clearButton" type="button">Clear</button>
+                        <button id="restoreButton" type="button">Restore Lesson</button>
+                    </div>
+                </div>
+
+                <div class="editor-frame">
+                    <div id="lineNumbers" class="line-numbers" aria-hidden="true"></div>
+                    <div class="editor-stage">
+                        <pre id="highlightLayer" class="highlight-layer" aria-hidden="true"></pre>
+                        <textarea id="codeEditor" spellcheck="false" aria-label="Alpha Learn editor"></textarea>
+                    </div>
+                </div>
+
+                <div class="lab-meta">
+                    <span>Shortcut: <code>Ctrl + Enter</code></span>
+                    <span id="draftStatus">Draft autosave is ready.</span>
+                </div>
+            </section>
+        </section>
+
+        <section class="lower-grid">
+            <article class="panel output-panel">
+                <div class="panel-head compact">
+                    <div>
+                        <p class="eyebrow">Output</p>
+                        <h2>Program Result</h2>
+                    </div>
+                    <span id="runBadge" class="pill-badge soft">No runs yet</span>
+                </div>
+                <pre id="outputView">Run a lesson to see Alpha output here.</pre>
+                <div id="errorBox" class="error-box hidden"></div>
+                <div id="friendlyExplain" class="friendly-explain hidden"></div>
+            </article>
+
+            <article class="panel quiz-panel">
+                <div class="panel-head compact">
+                    <div>
+                        <p class="eyebrow">Quiz</p>
+                        <h2>Check Your Understanding</h2>
+                    </div>
+                    <span id="quizScore" class="pill-badge">0 correct</span>
+                </div>
+                <div id="quizList" class="quiz-list"></div>
+            </article>
+
+            <article class="panel glossary-panel">
+                <div class="panel-head compact">
+                    <div>
+                        <p class="eyebrow">Words</p>
+                        <h2>Alpha Glossary</h2>
+                    </div>
+                </div>
+                <div id="glossaryList" class="glossary-list"></div>
+            </article>
+
+            <article class="panel progress-panel">
+                <div class="panel-head compact">
+                    <div>
+                        <p class="eyebrow">Progress</p>
+                        <h2>Badges And Notes</h2>
+                    </div>
+                </div>
+                <div id="badgeList" class="badge-list"></div>
+                <ul id="coachList" class="coach-list"></ul>
+                <div class="system-box">
+                    <strong id="systemMode">Checking connection mode...</strong>
+                    <div id="urlList" class="url-list"></div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <script src="/studio.js?v=alpha-learn-v1" defer></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "Alpha Learn",
+  "short_name": "Alpha Learn",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07111d",
+  "theme_color": "#07111d",
+  "description": "A beginner coding platform for learning Alpha.",
+  "icons": []
+}
