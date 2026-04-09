@@ -1,0 +1,35 @@
+Bluear_cod Proprietary Source-Available License
+
+Copyright (c) 2026 Bluear_cod
+All rights reserved.
+
+This repository version is provided as source-available proprietary material of Bluear_cod.
+It is not an open-source license.
+
+Allowed without separate written permission:
+- personal learning
+- education
+- private evaluation
+- non-commercial local testing
+
+Conditions:
+- visible credit must be kept for Alpha and Bluear_cod
+- copyright notices, branding notices, and policy notices must not be removed
+
+Not allowed without prior written permission from Bluear_cod:
+- commercial or business use
+- client work
+- SaaS or hosted service use
+- enterprise or organizational deployment
+- redistribution, resale, sublicensing, or republishing of the core code
+- copying substantial parts of the core Alpha code into another main product
+- rebranding the core Alpha code as another language or platform
+
+Commercial or large-project use requires a separate paid written license from Bluear_cod.
+
+No trademark rights are granted by this license.
+
+This license applies to this repository state and future distributions made under it.
+It does not by itself revoke rights which may already have been granted to earlier recipients under an earlier separate license.
+
+THE SOFTWARE AND FILES ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL BLUEAR_COD OR THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE OR FILES.
