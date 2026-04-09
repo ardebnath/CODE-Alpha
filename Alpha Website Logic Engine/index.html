@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#07131f">
+    <title>Alpha Website Logic Engine</title>
+    <link rel="manifest" href="/manifest.webmanifest?v=alpha-web-engine-v1">
+    <link rel="stylesheet" href="/style.css?v=alpha-web-engine-v1">
+</head>
+<body>
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+
+    <main class="shell">
+        <header class="hero panel">
+            <div class="hero-copy">
+                <p class="eyebrow">Bluear_cod Product</p>
+                <h1>Alpha Website Logic Engine</h1>
+                <p class="lead">
+                    Use Alpha as the readable scripting layer behind websites, forms, and admin tools.
+                    Build logic once, test it with sample payloads, save it as reusable scripts, and expose it through a simple execute API.
+                </p>
+                <div class="hero-actions">
+                    <button id="runButton" class="primary" type="button">Run Logic</button>
+                    <button id="saveButton" type="button">Save Script</button>
+                    <button id="clearButton" type="button">Clear</button>
+                </div>
+            </div>
+
+            <div class="hero-side">
+                <article class="hero-metric">
+                    <span>Engine Mode</span>
+                    <strong id="systemMode">Checking...</strong>
+                </article>
+                <article class="hero-metric">
+                    <span>Saved Scripts</span>
+                    <strong id="savedCount">0</strong>
+                </article>
+                <article class="hero-metric">
+                    <span>API Route</span>
+                    <strong>/api/public/execute</strong>
+                </article>
+                <div id="urlList" class="url-list"></div>
+            </div>
+        </header>
+
+        <section class="workspace">
+            <aside class="panel side-panel">
+                <div class="panel-head compact">
+                    <div>
+                        <p class="eyebrow">Templates</p>
+                        <h2>Website Logic Starters</h2>
+                    </div>
+                </div>
+                <div id="templateList" class="template-list"></div>
+
+                <div class="panel-head compact second-head">
+                    <div>
+                        <p class="eyebrow">Saved</p>
+                        <h2>Reusable Scripts</h2>
+                    </div>
+                </div>
+                <div id="savedList" class="saved-list"></div>
+            </aside>
+
+            <section class="panel editor-panel">
+                <div class="panel-head">
+                    <div>
+                        <p class="eyebrow">Editor</p>
+                        <h2>Alpha Website Script</h2>
+                    </div>
+                    <div class="script-fields">
+                        <label class="field compact-field">
+                            <span>Script Name</span>
+                            <input id="scriptNameInput" type="text" value="contact_form">
+                        </label>
+                        <label class="field compact-field">
+                            <span>Description</span>
+                            <input id="scriptDescriptionInput" type="text" value="Website logic rule">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="editor-frame">
+                    <div id="lineNumbers" class="line-numbers" aria-hidden="true"></div>
+                    <div class="editor-stage">
+                        <pre id="highlightLayer" class="highlight-layer" aria-hidden="true"></pre>
+                        <textarea id="codeEditor" spellcheck="false" aria-label="Alpha website logic editor"></textarea>
+                    </div>
+                </div>
+
+                <div class="status-row">
+                    <span id="statusBadge" class="status idle">Ready</span>
+                    <span id="statusText">Load a template or saved script to begin.</span>
+                </div>
+            </section>
+
+            <aside class="panel payload-panel">
+                <div class="panel-head compact">
+                    <div>
+                        <p class="eyebrow">Payload</p>
+                        <h2>Website Form Data</h2>
+                    </div>
+                </div>
+                <label class="field">
+                    <span>Form Data JSON</span>
+                    <textarea id="formDataInput" class="json-input" spellcheck="false"></textarea>
+                </label>
+                <label class="field">
+                    <span>Admin Data JSON</span>
+                    <textarea id="adminDataInput" class="json-input" spellcheck="false"></textarea>
+                </label>
+                <button id="apiExampleButton" class="secondary" type="button">Refresh API Example</button>
+                <pre id="apiExampleView" class="api-example"></pre>
+            </aside>
+        </section>
+
+        <section class="result-grid">
+            <article class="panel result-panel">
+                <div class="panel-head compact">
+                    <div>
+                        <p class="eyebrow">Output</p>
+                        <h2>Script Result</h2>
+                    </div>
+                </div>
+                <pre id="outputView">Run a script to see Alpha output here.</pre>
+                <div id="errorBox" class="error-box hidden"></div>
+            </article>
+
+            <article class="panel result-panel">
+                <div class="panel-head compact">
+                    <div>
+                        <p class="eyebrow">JSON</p>
+                        <h2>website_result</h2>
+                    </div>
+                </div>
+                <pre id="responseView">{}</pre>
+            </article>
+
+            <article class="panel result-panel">
+                <div class="panel-head compact">
+                    <div>
+                        <p class="eyebrow">Python</p>
+                        <h2>Translated Script</h2>
+                    </div>
+                </div>
+                <pre id="pythonView">Translated Python will appear here.</pre>
+            </article>
+        </section>
+
+        <section class="log-grid">
+            <article class="panel">
+                <div class="panel-head compact">
+                    <div>
+                        <p class="eyebrow">Logs</p>
+                        <h2>Recent Engine Runs</h2>
+                    </div>
+                </div>
+                <div id="logList" class="log-list"></div>
+            </article>
+
+            <article class="panel">
+                <div class="panel-head compact">
+                    <div>
+                        <p class="eyebrow">Notes</p>
+                        <h2>How To Use This Engine</h2>
+                    </div>
+                </div>
+                <ul id="tipList" class="tip-list"></ul>
+                <ul id="featureList" class="tip-list feature-list"></ul>
+            </article>
+        </section>
+    </main>
+
+    <script src="/studio.js?v=alpha-web-engine-v1" defer></script>
+</body>
+</html>

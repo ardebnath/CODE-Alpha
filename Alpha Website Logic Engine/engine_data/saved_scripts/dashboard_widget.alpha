@@ -1,0 +1,12 @@
+$ Template: dashboard widget
+set website_result = {
+    "ok": true,
+    "widget_title": "Leads Overview",
+    "cards": [
+        {"label": "Saved records", "value": length(records())},
+        {"label": "Latest action", "value": admin_action},
+        {"label": "Current page", "value": admin_page}
+    ]
+}
+
+note "Dashboard summary generated"

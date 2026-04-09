@@ -1,0 +1,9 @@
+{
+  "name": "Alpha Website Logic Engine",
+  "short_name": "Alpha Web Engine",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07131f",
+  "theme_color": "#07131f",
+  "description": "A browser dashboard for running Alpha scripts behind websites, forms, and admin tools."
+}

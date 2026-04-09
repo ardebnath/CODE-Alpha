@@ -1,0 +1,18 @@
+$ Template: inventory update
+set next_total = form_current_stock - form_order_count
+
+if next_total < 0 then
+    set website_result = {
+        "ok": false,
+        "message": "You cannot sell more items than you have in stock."
+    }
+otherwise
+    set website_result = {
+        "ok": true,
+        "message": "Inventory updated.",
+        "item": form_item_name,
+        "next_total": next_total,
+        "warning": next_total < 5
+    }
+    note "Inventory updated for " + form_item_name
+end

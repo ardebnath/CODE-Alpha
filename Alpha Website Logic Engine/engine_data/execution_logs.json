@@ -1,0 +1,41 @@
+[
+  {
+    "logged_at": "2026-04-08T16:35:56+05:30",
+    "script_name": "contact_form",
+    "status": "ok",
+    "duration_ms": 19.389,
+    "error_text": null,
+    "output_text": "Saved contact form for Aritra",
+    "website_result": {
+      "ok": true,
+      "message": "Lead saved by Alpha Website Logic Engine.",
+      "lead_key": "lead_2026_04_08"
+    }
+  },
+  {
+    "logged_at": "2026-04-08T16:36:19+05:30",
+    "script_name": "dashboard_widget",
+    "status": "ok",
+    "duration_ms": 3.443,
+    "error_text": null,
+    "output_text": "Dashboard summary generated",
+    "website_result": {
+      "ok": true,
+      "widget_title": "Leads Overview",
+      "cards": [
+        {
+          "label": "Saved records",
+          "value": 2
+        },
+        {
+          "label": "Latest action",
+          "value": "approve_order"
+        },
+        {
+          "label": "Current page",
+          "value": "orders_dashboard"
+        }
+      ]
+    }
+  }
+]

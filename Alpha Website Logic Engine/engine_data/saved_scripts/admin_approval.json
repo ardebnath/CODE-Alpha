@@ -1,0 +1,6 @@
+{
+  "key": "admin_approval",
+  "name": "Admin Approval Rule",
+  "description": "Approve or reject admin actions based on role and request details.",
+  "updated_at": "2026-04-08T16:32:45+05:30"
+}

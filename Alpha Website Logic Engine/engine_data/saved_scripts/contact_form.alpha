@@ -1,0 +1,26 @@
+$ Alpha Website Logic Engine template: contact form
+if form_email == "" then
+    set website_result = {
+        "ok": false,
+        "message": "Email is required before this form can be saved."
+    }
+otherwise
+    set lead_key = "lead_" + replace_text(split_text(to_text(timestamp_text()), " ")[0], "-", "_")
+    store(
+        lead_key,
+        {
+            "type": "contact_form",
+            "name": form_name,
+            "email": form_email,
+            "message": form_message,
+            "submitted_at": timestamp_text()
+        }
+    )
+
+    set website_result = {
+        "ok": true,
+        "message": "Lead saved by Alpha Website Logic Engine.",
+        "lead_key": lead_key
+    }
+    note "Saved contact form for " + form_name
+end

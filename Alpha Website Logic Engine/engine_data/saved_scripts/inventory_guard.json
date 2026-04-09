@@ -1,0 +1,6 @@
+{
+  "key": "inventory_guard",
+  "name": "Inventory Guard",
+  "description": "Protect stock updates and warn when quantity becomes low.",
+  "updated_at": "2026-04-08T16:32:45+05:30"
+}
