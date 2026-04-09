@@ -1,0 +1,29 @@
+Alpha database notes
+====================
+
+Database file:
+- `Libary/alpha_data.db`
+- The database is created automatically the first time you run Alpha.
+
+Tables:
+- `execution_runs`: stores every Alpha run, translated Python, output, errors, and timing.
+- `key_value_store`: stores persistent values for Alpha programs through `store()` and `fetch()`.
+- `installed_packages`: stores Alpha packages installed through the local package manager.
+
+Alpha database functions:
+- `store(key, value)` saves JSON data.
+- `fetch(key, default)` reads saved JSON data.
+- `erase(key)` removes a stored value.
+- `records()` lists all saved key/value rows.
+- `history(limit)` returns recent interpreter runs.
+- `package_install(name)` installs a local Alpha package.
+- `package_remove(name)` removes a local Alpha package.
+- `packages()` lists installed packages.
+- `bridge("sql", "SELECT ...")` runs a read-only SQL query against the Alpha database.
+- `bridge("packages", "available")` or `bridge("packages", "installed")` inspects package state.
+
+Why this matters:
+- Alpha can act like a small application language, not just a calculator.
+- You can save program state between runs.
+- The run history helps debug and understand the language.
+- The package table lets Alpha grow with reusable libraries.

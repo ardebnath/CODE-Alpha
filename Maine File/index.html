@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#07111d">
+    <title>Alpha Studio</title>
+    <link rel="manifest" href="/manifest.webmanifest?v=alpha-studio-v6">
+    <link rel="stylesheet" href="/style.css?v=alpha-studio-v6">
+</head>
+<body>
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+
+    <main class="shell">
+        <header class="app-menu panel">
+            <div class="brand-block">
+                <p class="eyebrow">Bluear_cod</p>
+                <h2>Alpha Studio Menu</h2>
+                <p class="menu-note">
+                    Workspace, Guide, Packages, and History each open in their own tab from this top menu bar.
+                </p>
+            </div>
+
+            <nav class="menu-bar" aria-label="Alpha Studio menu">
+                <div class="tab-bar" role="tablist" aria-label="Alpha Studio tabs">
+                    <button
+                        id="workspaceTabButton"
+                        class="tab-button is-active"
+                        type="button"
+                        role="tab"
+                        aria-selected="true"
+                        aria-controls="workspaceTab"
+                        data-tab="workspace"
+                    >
+                        <strong>Workspace</strong>
+                        <span>Editor, output, and Python view</span>
+                    </button>
+                    <button
+                        id="guideTabButton"
+                        class="tab-button"
+                        type="button"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="guideTab"
+                        data-tab="guide"
+                    >
+                        <strong>Guide</strong>
+                        <span>Starter programs, rules, and bridges</span>
+                    </button>
+                    <button
+                        id="packagesTabButton"
+                        class="tab-button"
+                        type="button"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="packagesTab"
+                        data-tab="packages"
+                    >
+                        <strong>Packages</strong>
+                        <span>Install and remove Alpha packages</span>
+                    </button>
+                    <button
+                        id="historyTabButton"
+                        class="tab-button"
+                        type="button"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="historyTab"
+                        data-tab="history"
+                    >
+                        <strong>History</strong>
+                        <span>Review your latest program runs</span>
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <section class="hero panel">
+            <div>
+                <p class="eyebrow">Alpha Language</p>
+                <h1>Build readable programs that stay powerful on desktop and mobile.</h1>
+                <p class="hero-copy">
+                    Alpha Studio now includes a richer interpreter, installable packages, a highlighted
+                    JavaScript editor, run history, and live sharing for phone and PC on the same network.
+                </p>
+            </div>
+
+            <div class="hero-stats">
+                <article>
+                    <span>Runtime</span>
+                    <strong>Interpreted + safe helpers</strong>
+                </article>
+                <article>
+                    <span>Packages</span>
+                    <strong>Local install system</strong>
+                </article>
+                <article>
+                    <span>Devices</span>
+                    <strong>Desktop + mobile studio</strong>
+                </article>
+            </div>
+        </section>
+
+        <section class="live-banner panel">
+            <div>
+                <p class="eyebrow">Live Access</p>
+                <h2>Open Alpha Studio on your phone or PC</h2>
+                <p class="hero-copy compact-copy">
+                    Use `python "Maine File/maine.py" --share-lan` to let devices on the same trusted Wi-Fi
+                    open Alpha Studio. You can also install it like an app when your browser supports it and
+                    sign in with a personal Alpha account to save projects in your own user folder.
+                </p>
+            </div>
+
+            <div class="live-tools">
+                <div id="systemMode" class="mode-badge">Checking server mode...</div>
+                <div id="urlList" class="url-list"></div>
+                <button id="installAppButton" class="secondary hidden" type="button">Install App</button>
+
+                <section class="account-shell">
+                    <div class="panel-header compact account-header">
+                        <div>
+                            <p class="eyebrow">Accounts</p>
+                            <h2>User Workspace</h2>
+                        </div>
+                    </div>
+
+                    <p id="accountMessage" class="account-message">
+                        Create a user or sign in to save Alpha projects in your own local folder.
+                    </p>
+
+                    <div id="authView" class="account-stack">
+                        <div class="field-grid">
+                            <label class="field">
+                                <span>Username</span>
+                                <input id="usernameInput" type="text" autocomplete="username" placeholder="alpha_user">
+                            </label>
+                            <label class="field">
+                                <span>Password</span>
+                                <input id="passwordInput" type="password" autocomplete="current-password" placeholder="your password">
+                            </label>
+                        </div>
+
+                        <div class="account-actions">
+                            <button id="loginButton" class="primary" type="button">Log In</button>
+                            <button id="registerButton" class="secondary" type="button">Create User</button>
+                        </div>
+                    </div>
+
+                    <div id="userView" class="account-stack hidden">
+                        <div class="account-summary">
+                            <div>
+                                <strong id="currentUsername">Not signed in</strong>
+                                <p id="currentUserFolder" class="account-path">User folder will appear here.</p>
+                                <p id="currentProjectFolder" class="account-path">Project folder will appear here.</p>
+                            </div>
+                            <button id="logoutButton" type="button">Log Out</button>
+                        </div>
+
+                        <div class="field-grid">
+                            <label class="field">
+                                <span>Project Name</span>
+                                <input id="projectNameInput" type="text" placeholder="my_project">
+                            </label>
+                        </div>
+
+                        <div class="account-actions">
+                            <button id="saveProjectButton" class="primary" type="button">Save Project</button>
+                            <button id="refreshProjectsButton" type="button">Refresh Projects</button>
+                        </div>
+
+                        <div class="field-grid">
+                            <label class="field">
+                                <span>Current Password</span>
+                                <input id="currentPasswordInput" type="password" autocomplete="current-password" placeholder="current password">
+                            </label>
+                            <label class="field">
+                                <span>New Password</span>
+                                <input id="newPasswordInput" type="password" autocomplete="new-password" placeholder="new password">
+                            </label>
+                        </div>
+
+                        <div class="account-actions">
+                            <button id="changePasswordButton" type="button">Change Password</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <section class="tab-stage">
+            <section
+                id="workspaceTab"
+                class="tab-panel is-active"
+                role="tabpanel"
+                aria-labelledby="workspaceTabButton"
+                aria-hidden="false"
+                data-tab-panel="workspace"
+            >
+                <section class="workspace">
+                    <section class="panel editor-panel">
+                        <div class="panel-header">
+                            <div>
+                                <p class="eyebrow">Studio</p>
+                                <h2>Alpha Editor</h2>
+                            </div>
+
+                            <div class="actions">
+                                <button id="runButton" class="primary" type="button">Run Alpha</button>
+                                <button id="clearButton" type="button">Clear</button>
+                                <button id="outputButton" type="button">Show Output</button>
+                            </div>
+                        </div>
+
+                        <div class="editor-frame">
+                            <div id="lineNumbers" class="line-numbers" aria-hidden="true"></div>
+                            <div class="editor-stage">
+                                <pre id="highlightLayer" class="highlight-layer" aria-hidden="true"></pre>
+                                <textarea id="codeEditor" spellcheck="false" aria-label="Alpha code editor"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="hint-row">
+                            <span>Run shortcut: <code>Ctrl + Enter</code> or <code>Cmd + Enter</code></span>
+                            <span id="draftStatus">Draft autosave is ready.</span>
+                        </div>
+
+                        <div class="status-row">
+                            <span id="statusBadge" class="status idle">Ready</span>
+                            <span id="timingText">Waiting for your first run.</span>
+                        </div>
+                    </section>
+
+                    <section class="side-column">
+                        <article class="panel project-panel">
+                            <div class="panel-header compact">
+                                <div>
+                                    <p class="eyebrow">Projects</p>
+                                    <h2>Saved Projects</h2>
+                                </div>
+                            </div>
+                            <p id="projectPanelMessage" class="foot-note">
+                                Sign in to save and load Alpha projects from your own user folder.
+                            </p>
+                            <div id="projectList" class="project-list"></div>
+                        </article>
+
+                        <article class="panel output-panel" id="outputPanel">
+                            <div class="panel-header compact">
+                                <div>
+                                    <p class="eyebrow">Output</p>
+                                    <h2>Program Result</h2>
+                                </div>
+                            </div>
+                            <pre id="outputView">Output will appear here.</pre>
+                            <div id="errorBox" class="error-box hidden"></div>
+                        </article>
+
+                        <article class="panel python-panel">
+                            <div class="panel-header compact">
+                                <div>
+                                    <p class="eyebrow">Translation</p>
+                                    <h2>Generated Python</h2>
+                                </div>
+                            </div>
+                            <pre id="pythonView">Translated Python will appear here.</pre>
+                        </article>
+                    </section>
+                </section>
+            </section>
+
+            <section
+                id="guideTab"
+                class="tab-panel"
+                role="tabpanel"
+                aria-labelledby="guideTabButton"
+                aria-hidden="true"
+                data-tab-panel="guide"
+                hidden
+            >
+                <section class="grid guide-grid">
+                    <article class="panel">
+                        <div class="panel-header compact">
+                            <div>
+                                <p class="eyebrow">Samples</p>
+                                <h2>Starter Programs</h2>
+                            </div>
+                        </div>
+                        <div id="sampleList" class="pill-list"></div>
+                    </article>
+
+                    <article class="panel">
+                        <div class="panel-header compact">
+                            <div>
+                                <p class="eyebrow">Rules</p>
+                                <h2>Language Guide</h2>
+                            </div>
+                        </div>
+                        <div id="ruleList" class="rule-list"></div>
+                    </article>
+
+                    <article class="panel">
+                        <div class="panel-header compact">
+                            <div>
+                                <p class="eyebrow">Bridges</p>
+                                <h2>Extend Alpha</h2>
+                            </div>
+                        </div>
+                        <div id="bridgeList" class="bridge-list"></div>
+                    </article>
+
+                    <article class="panel">
+                        <div class="panel-header compact">
+                            <div>
+                                <p class="eyebrow">Runtime</p>
+                                <h2>Requirements</h2>
+                            </div>
+                        </div>
+                        <ul id="requirementList" class="simple-list"></ul>
+                        <p class="foot-note">Safe modules: <span id="moduleList"></span></p>
+                        <div id="extensionNotes" class="note-list"></div>
+                    </article>
+                </section>
+            </section>
+
+            <section
+                id="packagesTab"
+                class="tab-panel"
+                role="tabpanel"
+                aria-labelledby="packagesTabButton"
+                aria-hidden="true"
+                data-tab-panel="packages"
+                hidden
+            >
+                <section class="single-column">
+                    <article class="panel tab-card">
+                        <div class="panel-header compact">
+                            <div>
+                                <p class="eyebrow">Packages</p>
+                                <h2>Package Manager</h2>
+                            </div>
+                        </div>
+                        <div id="packageList" class="package-list"></div>
+                    </article>
+                </section>
+            </section>
+
+            <section
+                id="historyTab"
+                class="tab-panel"
+                role="tabpanel"
+                aria-labelledby="historyTabButton"
+                aria-hidden="true"
+                data-tab-panel="history"
+                hidden
+            >
+                <section class="single-column">
+                    <article class="panel history-panel tab-card">
+                        <div class="panel-header compact">
+                            <div>
+                                <p class="eyebrow">History</p>
+                                <h2>Recent Runs</h2>
+                            </div>
+                        </div>
+                        <div id="historyList" class="history-list"></div>
+                    </article>
+                </section>
+            </section>
+        </section>
+
+        <div class="mobile-bar">
+            <button id="mobileRunButton" class="primary" type="button">Run</button>
+            <button id="mobileOutputButton" type="button">Output</button>
+        </div>
+
+        <footer class="project-footer panel">
+            <p class="eyebrow">Source Model</p>
+            <h2>Alpha by Bluear_cod is proprietary brand property</h2>
+            <p class="hero-copy compact-copy">
+                Learning and evaluation use are allowed, but business use or copying of core code
+                needs written permission from Bluear_cod.
+            </p>
+        </footer>
+    </main>
+
+    <script src="/studio.js?v=alpha-studio-v6" defer></script>
+</body>
+</html>
