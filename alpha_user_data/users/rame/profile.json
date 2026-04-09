@@ -1,0 +1,9 @@
+{
+  "username": "rame",
+  "canonical_username": "rame",
+  "password_salt": "9638f8ef2a0c1119d9e815a786bfd669",
+  "password_hash": "8599648ba99e7c620956c1f51d86a76ca0b30e080d33dc31c7670611f19ac80d",
+  "created_at": "2026-04-07T15:58:51+05:30",
+  "updated_at": "2026-04-07T15:58:51+05:30",
+  "password_updated_at": "2026-04-07T15:58:51+05:30"
+}
