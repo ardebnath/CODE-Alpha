@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.AlphaMobileCoderStudio" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/alpha_accent</item>
+        <item name="colorOnPrimary">@color/alpha_button_text</item>
+        <item name="colorSecondary">@color/alpha_success</item>
+        <item name="android:statusBarColor">@color/alpha_background</item>
+        <item name="android:navigationBarColor">@color/alpha_background</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:windowBackground">@color/alpha_background</item>
+    </style>
+</resources>

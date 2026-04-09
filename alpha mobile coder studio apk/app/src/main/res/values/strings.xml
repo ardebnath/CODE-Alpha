@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Alpha Mobile Coder Studio</string>
+    <string name="brand_name">Bluear_cod</string>
+    <string name="loading_title">Starting Alpha Studio</string>
+    <string name="loading_message">Preparing the embedded Alpha runtime, local server, saved projects, and compact mobile workspace.</string>
+    <string name="loading_ready_title">Alpha Mobile Coder Studio</string>
+    <string name="loading_ready_message">The embedded Alpha browser studio is ready.</string>
+    <string name="loading_failed_title">Alpha Studio Could Not Start</string>
+    <string name="loading_failed_message">The embedded Alpha server or WebView could not load correctly.</string>
+    <string name="retry">Retry</string>
+</resources>

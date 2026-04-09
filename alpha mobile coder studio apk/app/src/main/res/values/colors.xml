@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="alpha_background">#07111D</color>
+    <color name="alpha_surface">#10263A</color>
+    <color name="alpha_surface_deep">#0B1B28</color>
+    <color name="alpha_text">#EEF4F9</color>
+    <color name="alpha_muted">#9AB3C7</color>
+    <color name="alpha_accent">#FFB84D</color>
+    <color name="alpha_success">#4BD6A4</color>
+    <color name="alpha_button_text">#1D1200</color>
+</resources>
