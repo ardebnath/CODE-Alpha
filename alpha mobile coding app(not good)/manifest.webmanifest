@@ -1,0 +1,9 @@
+{
+  "name": "Alpha Mobile Coding App",
+  "short_name": "Alpha Mobile",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#08111e",
+  "theme_color": "#08111e",
+  "description": "A phone-first Alpha app for writing and running code anywhere."
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#08111e">
+    <title>Alpha Mobile Coding App</title>
+    <link rel="manifest" href="/manifest.webmanifest?v=alpha-mobile-v1">
+    <link rel="stylesheet" href="/style.css?v=alpha-mobile-v1">
+</head>
+<body>
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+
+    <main class="app-shell">
+        <header class="hero-card panel">
+            <div class="hero-copy">
+                <p class="eyebrow">Bluear_cod</p>
+                <h1>Alpha Mobile Coding App</h1>
+                <p class="lead">
+                    A phone-first Alpha app for writing and running code anywhere.
+                    Tap snippets, load samples, save code on this device, and install it like an app.
+                </p>
+            </div>
+
+            <div class="hero-tools">
+                <span id="statusBadge" class="status idle">Ready</span>
+                <button id="installButton" class="secondary hidden" type="button">Install App</button>
+                <div id="systemMode" class="mode-badge">Checking connection...</div>
+            </div>
+        </header>
+
+        <section class="top-strip panel">
+            <label class="field">
+                <span>Notebook Name</span>
+                <input id="noteNameInput" type="text" value="mobile_alpha_note">
+            </label>
+            <div class="quick-actions">
+                <button id="runButton" class="primary" type="button">Run</button>
+                <button id="saveButton" type="button">Save</button>
+                <button id="clearButton" type="button">Clear</button>
+            </div>
+        </section>
+
+        <nav class="mobile-tabs panel" aria-label="Mobile Alpha sections">
+            <button class="tab-button is-active" type="button" data-tab="code">Code</button>
+            <button class="tab-button" type="button" data-tab="result">Result</button>
+            <button class="tab-button" type="button" data-tab="samples">Samples</button>
+            <button class="tab-button" type="button" data-tab="saves">Saves</button>
+        </nav>
+
+        <section class="tab-stage">
+            <section class="tab-panel is-active" data-tab-panel="code">
+                <article class="panel section-card">
+                    <div class="section-head">
+                        <div>
+                            <p class="eyebrow">Editor</p>
+                            <h2>Write Alpha On Your Phone</h2>
+                        </div>
+                        <p id="statusText" class="section-note">Tap a snippet chip to insert code fast.</p>
+                    </div>
+
+                    <div id="snippetRow" class="snippet-row"></div>
+
+                    <div class="editor-frame">
+                        <div id="lineNumbers" class="line-numbers" aria-hidden="true"></div>
+                        <div class="editor-stage">
+                            <pre id="highlightLayer" class="highlight-layer" aria-hidden="true"></pre>
+                            <textarea id="codeEditor" spellcheck="false" aria-label="Alpha mobile code editor"></textarea>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section class="tab-panel" data-tab-panel="result" hidden>
+                <article class="panel section-card">
+                    <div class="section-head">
+                        <div>
+                            <p class="eyebrow">Result</p>
+                            <h2>Run Output</h2>
+                        </div>
+                        <button id="speakOutputButton" type="button">Read Output</button>
+                    </div>
+                    <pre id="outputView">Run Alpha code to see the result.</pre>
+                    <div id="errorBox" class="error-box hidden"></div>
+                </article>
+
+                <article class="panel section-card">
+                    <div class="section-head">
+                        <div>
+                            <p class="eyebrow">Python</p>
+                            <h2>Translated Code</h2>
+                        </div>
+                    </div>
+                    <pre id="pythonView">Translated Python will appear here.</pre>
+                </article>
+            </section>
+
+            <section class="tab-panel" data-tab-panel="samples" hidden>
+                <article class="panel section-card">
+                    <div class="section-head">
+                        <div>
+                            <p class="eyebrow">Samples</p>
+                            <h2>Phone-Friendly Starters</h2>
+                        </div>
+                    </div>
+                    <div id="sampleList" class="sample-list"></div>
+                </article>
+
+                <article class="panel section-card">
+                    <div class="section-head">
+                        <div>
+                            <p class="eyebrow">Tips</p>
+                            <h2>Mobile Coding Guide</h2>
+                        </div>
+                    </div>
+                    <ul id="tipList" class="tip-list"></ul>
+                </article>
+            </section>
+
+            <section class="tab-panel" data-tab-panel="saves" hidden>
+                <article class="panel section-card">
+                    <div class="section-head">
+                        <div>
+                            <p class="eyebrow">Notebook</p>
+                            <h2>Saved On This Device</h2>
+                        </div>
+                        <button id="refreshSavedButton" type="button">Refresh</button>
+                    </div>
+                    <div id="savedList" class="saved-list"></div>
+                </article>
+
+                <article class="panel section-card">
+                    <div class="section-head">
+                        <div>
+                            <p class="eyebrow">Share</p>
+                            <h2>Open On Another Device</h2>
+                        </div>
+                    </div>
+                    <div id="urlList" class="url-list"></div>
+                </article>
+            </section>
+        </section>
+
+        <div class="bottom-bar">
+            <button id="bottomRunButton" class="primary" type="button">Run</button>
+            <button id="bottomSampleButton" type="button">Samples</button>
+            <button id="bottomSaveButton" type="button">Save</button>
+            <button id="bottomResultButton" type="button">Result</button>
+        </div>
+    </main>
+
+    <script src="/studio.js?v=alpha-mobile-v1" defer></script>
+</body>
+</html>
