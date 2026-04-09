@@ -1,0 +1,9 @@
+{
+  "name": "Alpha Kids Studio",
+  "short_name": "Alpha Kids",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#d9f4ff",
+  "theme_color": "#183153",
+  "description": "A kid-friendly Alpha coding studio with playful lessons and voice help."
+}

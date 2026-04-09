@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#183153">
+    <title>Alpha Kids Studio</title>
+    <link rel="manifest" href="/manifest.webmanifest?v=kids-alpha-v1">
+    <link rel="stylesheet" href="/style.css?v=kids-alpha-v1">
+</head>
+<body>
+    <div class="cloud cloud-one"></div>
+    <div class="cloud cloud-two"></div>
+    <div class="spark spark-one"></div>
+    <div class="spark spark-two"></div>
+
+    <main class="shell">
+        <header class="hero panel">
+            <div class="hero-copy">
+                <p class="eyebrow">Bluear_cod Presents</p>
+                <h1>Alpha Kids Studio</h1>
+                <p class="lead">
+                    A colorful Alpha playground for small creators. Pick a lesson, press run,
+                    listen to friendly voice help, and build simple projects one bright step at a time.
+                </p>
+
+                <div class="hero-actions">
+                    <button id="runButton" class="primary" type="button">Run My Code</button>
+                    <button id="readLessonButton" type="button">Read Lesson</button>
+                    <button id="readOutputButton" type="button">Read Output</button>
+                    <button id="clearButton" type="button">Clear</button>
+                </div>
+            </div>
+
+            <div class="hero-side">
+                <div class="bubble-card bubble-gold">
+                    <span class="bubble-label">Mission</span>
+                    <strong id="lessonTitle">Loading lesson...</strong>
+                    <p id="lessonGoal">Please wait while Alpha Kids gets ready.</p>
+                </div>
+                <div class="bubble-card bubble-mint">
+                    <span class="bubble-label">Hint</span>
+                    <p id="lessonHint">Hints will appear here.</p>
+                </div>
+                <div class="bubble-card bubble-pink">
+                    <span class="bubble-label">Challenge</span>
+                    <p id="lessonChallenge">Challenge ideas will appear here.</p>
+                </div>
+            </div>
+        </header>
+
+        <section class="dashboard">
+            <section class="panel lesson-panel">
+                <div class="panel-head">
+                    <div>
+                        <p class="eyebrow">Learn</p>
+                        <h2>Lesson Trail</h2>
+                    </div>
+                    <p id="progressBadge" class="progress-badge">0 lessons completed</p>
+                </div>
+                <div id="lessonList" class="lesson-list"></div>
+            </section>
+
+            <section class="panel editor-panel">
+                <div class="panel-head">
+                    <div>
+                        <p class="eyebrow">Code</p>
+                        <h2>Friendly Alpha Editor</h2>
+                    </div>
+                    <div class="studio-actions">
+                        <button id="needHintButton" class="secondary" type="button">Need A Hint</button>
+                        <button id="explainErrorButton" type="button">Explain Error</button>
+                    </div>
+                </div>
+
+                <div class="editor-frame">
+                    <div id="lineNumbers" class="line-numbers" aria-hidden="true"></div>
+                    <div class="editor-stage">
+                        <pre id="highlightLayer" class="highlight-layer" aria-hidden="true"></pre>
+                        <textarea id="codeEditor" spellcheck="false" aria-label="Alpha Kids code editor"></textarea>
+                    </div>
+                </div>
+
+                <div class="coach-row">
+                    <span id="coachMessage">Pick a lesson to begin your next mini mission.</span>
+                    <span id="statusBadge" class="status idle">Ready</span>
+                </div>
+            </section>
+
+            <section class="panel builder-panel">
+                <div class="panel-head">
+                    <div>
+                        <p class="eyebrow">Create</p>
+                        <h2>Project Builders</h2>
+                    </div>
+                </div>
+                <div id="builderList" class="builder-list"></div>
+            </section>
+        </section>
+
+        <section class="lower-grid">
+            <article class="panel output-panel">
+                <div class="panel-head compact">
+                    <div>
+                        <p class="eyebrow">Result</p>
+                        <h2>What Your Code Did</h2>
+                    </div>
+                    <span id="celebrationBadge" class="celebration-badge">Waiting for your first run</span>
+                </div>
+                <pre id="outputView">Press "Run My Code" to see your result.</pre>
+                <div id="errorBox" class="error-box hidden"></div>
+                <div id="simpleExplain" class="simple-explain hidden"></div>
+            </article>
+
+            <article class="panel helper-panel">
+                <div class="panel-head compact">
+                    <div>
+                        <p class="eyebrow">Coach</p>
+                        <h2>Helper Corner</h2>
+                    </div>
+                </div>
+                <ul id="tipList" class="tip-list"></ul>
+                <div class="system-card">
+                    <strong>Open On Another Device</strong>
+                    <p id="systemMode">Checking connection mode...</p>
+                    <div id="urlList" class="url-list"></div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <script src="/studio.js?v=kids-alpha-v1" defer></script>
+</body>
+</html>
