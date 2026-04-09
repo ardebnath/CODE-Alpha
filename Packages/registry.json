@@ -1,0 +1,49 @@
+[
+  {
+    "name": "collections_plus",
+    "title": "Collections Plus",
+    "description": "Extra list and dictionary helpers for complex data processing.",
+    "exports": [
+      "chunk_items",
+      "group_by_key",
+      "unique_items"
+    ],
+    "tags": [
+      "data",
+      "collections",
+      "utility"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "name": "text_tools",
+    "title": "Text Tools",
+    "description": "Formatting, slug generation, and text shaping helpers.",
+    "exports": [
+      "slugify",
+      "title_case",
+      "word_count"
+    ],
+    "tags": [
+      "text",
+      "web",
+      "utility"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "name": "math_plus",
+    "title": "Math Plus",
+    "description": "Higher-level math helpers useful for reports and analytics.",
+    "exports": [
+      "average_of",
+      "clamp_value",
+      "percent_of"
+    ],
+    "tags": [
+      "math",
+      "analytics"
+    ],
+    "version": "1.0.0"
+  }
+]
